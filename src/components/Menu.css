@@ -1,0 +1,28 @@
+.Menu {
+  display: inline-block;
+  text-align: center;
+  height: 100%;
+  float: right;
+  padding: 0 20px;
+
+}
+.Menu-item {
+  font-family: OpenSans-SemiBold;
+  font-size: 14px;
+  padding: 20px;
+  vertical-align: middle;
+  line-height: normal;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  border-bottom: 2px solid white;
+
+}
+.Menu-item a {
+  color: white;
+  text-decoration: none;
+}
+.Menu-item:hover {
+  cursor: pointer;
+  border-color: #50E3C2;
+}

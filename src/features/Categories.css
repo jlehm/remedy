@@ -1,0 +1,21 @@
+.categories {
+  padding: 10px;
+  overflow: auto;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+.categories::-webkit-scrollbar {
+  display: none;
+}
+.categoriesHeader {
+  font-family: CircularStd-Bold;
+  font-size: 24px;
+  padding: 0 20px;
+}
+.categoriesContainer {
+  width: fit-content;
+  white-space: nowrap;
+  display: block;
+  overflow: auto;
+  padding: 0;
+}

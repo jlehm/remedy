@@ -1,0 +1,10 @@
+.recommended {
+  padding: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.recommendedHeader {
+  font-family: CircularStd-Bold;
+  font-size: 24px;
+  padding: 20px 0;
+}

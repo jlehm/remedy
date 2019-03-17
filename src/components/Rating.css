@@ -1,0 +1,9 @@
+.ratingDiv {
+  display:inline-block;
+}
+.rating {
+  font-family: CircularStd-Medium;
+  font-size: 14px;
+  display: inline-block;
+  padding-right: 5px;
+}

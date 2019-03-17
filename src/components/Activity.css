@@ -1,0 +1,30 @@
+.activity {
+  height: 260px;
+  display: inline-block;
+  padding: 10px;
+}
+.activityThumb {
+  height: 160px;
+  width: 240px;
+}
+.activityTitle {
+  font-family: CircularStd-Bold;
+  font-size: 24px;
+}
+.activityText {
+  font-family: CircularStd-Book;
+  font-size: 14px;
+}
+.activityRating {
+  font-family: CircularStd-Medium;
+  font-size: 14px;
+  display: inline-block;
+  padding-right: 5px;
+}
+.activityPrice {
+  font-family: CircularStd-Medium;
+  font-size: 14px;
+  display: inline-block;
+  width: 30px;
+  float: right;
+}

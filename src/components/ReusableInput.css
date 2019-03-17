@@ -1,0 +1,28 @@
+.reusableInputWrapper {
+  padding: 5px 0;
+}
+.reusableInput {
+  border-radius: 10px;
+  box-shadow: none;
+  display: block;
+  margin: 0 auto;
+  line-height: 30px;
+  border: 1px solid lightgrey;
+  font-size: 16px;
+  font-weight: 600;
+  width: 300px;
+  padding: 0;
+  text-align: center;
+}
+.reusableInput:focus {
+  outline-color: #50E3C2;
+  outline-width: medium;
+}
+.reusableInputLabel {
+  margin: 0 auto;
+  display: block;
+  width: 300px;
+  font-size: 14px;
+  line-height:28px;
+  text-align:left;
+}

@@ -1,0 +1,17 @@
+.termsOfService {
+  color: #7F7F7F;
+  display: inline-block;
+  text-align: center;
+  line-height: normal;
+  padding: 20px;
+  text-decoration: none;
+  font-family: OpenSans-SemiBold;
+  font-size: 14px;
+}
+.termsOfService:hover {
+  cursor: pointer;
+  border-bottom: 2px solid red;
+}
+.termsOfServiceContent {
+  margin: 20px;
+}

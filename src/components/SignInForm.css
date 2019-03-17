@@ -1,0 +1,51 @@
+.signInFormWrapper {
+/*background: url(/static/media/bg.7ffb9cd7.jpg);*/
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  float: left;
+  background-size: cover;
+}
+.signInForm {
+  text-align: center;
+  width: 400px;
+  height: 350px;
+  margin: 70px auto;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.signInFormLabel {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 60px;
+  font-family: -apple-system, BlinkMacSystemFont;
+}
+.signInFormLabelLink {
+  color: #50E3C2;
+  text-decoration: none;
+}
+.signInFormInputWrapper {
+  margin: 0;
+  overflow: auto;
+  padding: 0;
+}
+.signInFormInput {
+  height: 60px;
+  margin: 10px 0;
+  width: 100%;
+  padding: 10px;
+  border-radius: 0;
+  display: block;
+  background: #fff;
+  border: 1px solid #e5e7ea;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+.signInFormButton {
+  height: 40px;
+  width: 150px;
+  box-sizing: border-box;
+  margin: 10px;
+  font-size: 16px;
+}

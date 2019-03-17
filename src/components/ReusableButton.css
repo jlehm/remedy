@@ -1,0 +1,18 @@
+.reusableButton {
+  width: 150px;
+  line-height: 30px;
+  font-size: 14px;
+  background-color: #50E3C2;
+  border: none;
+  color: white;
+  display: block;
+  margin: 20px auto;
+  text-transform: lowercase;
+}
+.reusableButton:hover {
+  cursor: pointer;
+}
+
+.reusableButtonWrapper {
+  padding: 5px 0;
+}

@@ -1,0 +1,21 @@
+.category {
+
+}
+.category:hover {
+  cursor: pointer;
+}
+.categoryImage {
+  height: 300px;
+  width: 240px;
+}
+.categoryLabel {
+  display: inline-block;
+  float: left;
+  position: relative;
+  top: 50%;
+  text-align: center;
+  width: 100%;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}

@@ -1,0 +1,37 @@
+.searchLineContainer {
+  text-align: center;
+}
+.searchLine {
+  border-bottom: 2px lightgrey solid;
+  display: inline-block;
+  width: 300px;
+  margin: 6vh;
+}
+.searchLineSubmit {
+  height: 40px;
+  width: 40px;
+  background: grey;
+  display: inline-block;
+  border-radius: 5px;
+  float: right;
+  margin: 5px;
+}
+.searchLineSubmit:hover {
+  cursor: pointer;
+  background: lightgrey;
+}
+.searchInput {
+  line-height: 50px;
+  font-size: 22px;
+  display: inline-block;
+  max-width: 300px;
+  border:none;
+}
+.searchInput:focus {
+  outline: none;
+}
+.searchBox {
+  width: 90vw;
+  border: 1.5px solid lightgrey;
+  margin: 0 auto;
+}

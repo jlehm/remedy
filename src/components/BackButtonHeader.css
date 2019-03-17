@@ -1,0 +1,28 @@
+.backButtonHeader{
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+}
+.backButton {
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  font-family:OpenSans-Bold;
+  padding: 0 20px;
+  text-decoration: none;
+  text-decoration-color: none;
+  color:black;
+}
+.backArrow {
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  float: left;
+  background: gainsboro;
+  padding: 0 0 0 20px;
+  background-size: 60px 60px;
+}
+.backText {
+  line-height: normal;
+  display: inline-block;
+  padding: 0 20px;
+}

@@ -1,0 +1,20 @@
+.arrowButtonContainer {
+  height: 100%;
+  display: none;
+}
+.leftArrowButton {
+  display: inline-block;
+  background: lightgrey;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  vertical-align: middle;
+}
+.rightArrowButton {
+  display: inline-block;
+  background: lightgrey;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  vertical-align: middle;
+}

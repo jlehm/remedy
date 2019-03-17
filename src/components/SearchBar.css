@@ -1,0 +1,55 @@
+.searchBarWrapper {
+    padding: 10% 0 5%;
+    overflow: visible;
+}
+
+.searchBar {
+   height: 200px;
+   width: 800px;
+   position: relative;
+   margin: 0 auto;
+   border: 1.5px solid black;
+}
+.searchInput {
+  line-height: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  display: inline-block;
+  width: inherit;
+  border:none;
+  text-align: center;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  box-sizing: border-box;
+  background: none;
+  text-transform: uppercase;
+}
+.searchInput:focus {
+  outline: none;
+}
+.searchPlaceholder {
+  line-height: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  display: inline-block;
+  width: inherit;
+  border:none;
+  text-align: center;
+  opacity: 0.7;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.searchButtons {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-70%);
+  transform: translateY(100%);
+  text-align: center;
+  margin: 0 auto;
+  width: inherit;
+}

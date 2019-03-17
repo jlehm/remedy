@@ -1,0 +1,17 @@
+.featured {
+  padding: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: 400px;
+}
+.featuredHeader {
+  font-family: CircularStd-Bold;
+  font-size: 24px;
+  padding: 20px 0;
+}
+.featuredImage {
+  width: 100%;
+}
+.advertisementTag {
+
+}

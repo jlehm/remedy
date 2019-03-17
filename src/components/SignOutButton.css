@@ -1,0 +1,13 @@
+.signOutButton {
+  border: solid black 1.5px;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100px;
+  font-family: OpenSans-SemiBold;
+  font-size: 14px;
+  color: black;
+}
+.signOutButton:hover {
+  border-color: #50E3C2;
+  cursor: pointer;
+}

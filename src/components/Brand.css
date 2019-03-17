@@ -1,0 +1,23 @@
+.brand {
+  font-family: Gilroy-ExtraBold, Circular, Arial;
+  font-size: 40px;
+  color: #50E3C2;
+  display: inline-block;
+  text-align: center;
+  padding: 0 10px;
+  text-decoration: none;
+}
+
+.brandSmaller {
+  font-family: Gilroy-ExtraBold, Circular, Arial;
+  font-size: 24px;
+  color: #50E3C2;
+  display: inline-block;
+  text-align: center;
+  padding: 0 10px 0 20px;
+}
+.brandAndLogo {
+  display: inline-block;
+  line-height: unset;
+  padding: 0  15px;
+}

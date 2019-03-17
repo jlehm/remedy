@@ -1,0 +1,19 @@
+.searchClearInputButton {
+  text-align: center;
+  font-size: 14px;
+  line-height: 50px;
+  display: block;
+  height: 50px;
+  width: 200px;
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+  top: 75%;
+  margin-top: -25px;
+  border: 1px solid white;
+  border-radius: 25px;
+}
+.searchClearInputButton:hover {
+  cursor: pointer;
+  border-color: rgba(0,0,0,0.1);
+}
