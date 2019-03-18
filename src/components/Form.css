@@ -1,0 +1,21 @@
+.formWrapper {
+    width: 40%;
+    min-width: 400px;
+    margin: 0;
+    /*padding: 0 0 0 10%;*/
+    display: block;
+    box-sizing: border-box;
+    float: left;
+}
+.formBody {
+    margin: 30px 0;
+}
+.formInput {
+    height: 30px;
+    width: 300px;
+    padding: 0 10px;
+    border: solid 1px;
+    font-size: 16px;
+    display: inline-block;
+    margin: 10px 0;
+}

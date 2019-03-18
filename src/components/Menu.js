@@ -3,7 +3,6 @@ import { NavLink, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './Menu.css';
 
-import AuthUserContext from './../containers/AuthUserContext.js'
 import SignOutButton from './../components/SignOutButton.js'
 
 class Menu extends Component {

@@ -3,7 +3,7 @@ import './Copyright.css'
 
 const Copyright = () => {
   return (
-    <div className="copyright">© Remedy Disposal, Inc.</div>
+    <div className="copyright">© Remedy Waste Solutions, Inc.</div>
   )
 }
 

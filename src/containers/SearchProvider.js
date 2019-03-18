@@ -1,5 +1,5 @@
 import React from 'react'
-import { Provider, Consumer } from './../containers/SearchContext.js'
+import { Provider } from './../containers/SearchContext.js'
 
 class SearchProvider extends React.Component {
   constructor(){

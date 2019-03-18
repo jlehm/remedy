@@ -56,7 +56,7 @@ class SignInForm extends React.Component {
                 name="email"
                 value={email}
                 onChange={this.onChange}
-                type="text"
+                type="email"
                 placeholder="Email Address"
               />
             </div>

@@ -1,8 +1,7 @@
 import React from 'react'
 import Search from './../features/Search.js'
-import SearchDropdown from './../components/SearchDropdown.js'
 
-import { Provider, Consumer } from './../containers/SearchContext.js'
+import { Consumer } from './../containers/SearchContext.js'
 
 class SearchContainer extends React.Component {
   render() {
