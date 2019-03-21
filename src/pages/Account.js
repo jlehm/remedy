@@ -119,15 +119,43 @@ const AccountPage = ( props ) => {
         Update Method
       </button>  
     </div>
+    <div className="accountInformation">
+      <h2>Add Payment Method</h2>
+      <div className="card">
+        <div className="cardTitle">Credit or Debit Card</div>
+        <div className="cardSubTitle"></div>
+        <div className="formWrapper">
+          <form className="passwordForgetForm">
+            <div className="cardSubTitle">Card Holder</div>
+            <FormInput type="text" name="cardHolder" placeholder="Card Holder" />
+            <div className="cardSubTitle">Card Number</div>
+            <FormInput type="text" name="cardNumber" placeholder="Card Number" />
+            <div className="cardSubTitle">Expiration Date</div>
+            <FormInput type="text" name="expirationDate" placeholder="Expiration Date" />
+            <hr/>
+            <FormInput type="text" name="cardBillingAddress" placeholder="Card Billing Address" />
+            <FormInput type="text" name="cardBillingAddress" placeholder="Card Billing Address" />
+            <FormInput type="text" name="cardBillingCity" placeholder="Card Billing City" />
+            <FormInput type="text" name="cardBillingZipcode" placeholder="Card Billing Zipcode" />
+            <button  
+            type="submit"
+            className="passwordChangeButton"
+            >
+              Add Payment Card
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>  
     <div className="fullContent">
       <h2>Billing Statements</h2>
       <div className="card">
         <table>
           <tr>
             <th>Billing Period</th>
-            <th>Payment Date</th>
-            <th>Payment Amount</th>
-            <th>Payment Status</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Status</th>
           </tr>
           <tr>
             <td>March 29, 2019 – April 20, 2019</td>
