@@ -1,26 +1,53 @@
 import React from 'react'
 import './Home.css'
+import './../pages/remedyStyles.css'
+import './../components/tiles.css'
 
-import withAuthorization from './../HOCs/withAuthorization.js'
-
-import SearchContainer from './../containers/SearchContainer.js'
 import Footer from './../features/Footer.js'
+import SignUpFloater from '../components/SignUpFloater.js';
 
-import SearchProvider from './../containers/SearchProvider.js'
 
 class Home extends React.Component {
   render() {
     return (
-      <div className="Home">
-        <SearchProvider>
-          <SearchContainer {...this.props} />
-          <Footer {...this.props} />
-        </SearchProvider>
-      </div>
+      <React.Fragment>
+        <div className="Home">
+          <div className="landingCarousel">
+            <div className="landing">
+            </div>
+            <SignUpFloater />
+          </div>
+          <div className="tiles">
+            <div className="tile-lg">
+              <div className="serviceTileHeader">Bag Service</div>
+              <div className="advertisement">           
+                <div className="advertisementLabelTag">starting at</div>
+                <div className="advertisementPriceTag">$29.95</div>
+                <div className="advertisementTaxTag">plus tax</div>
+              </div>
+            </div>
+            <div className="tile-lg">
+              <div className="serviceTileHeader">Bulk Haul-off</div>
+              <div className="advertisement">           
+                <div className="advertisementLabelTag">starting at</div>
+                <div className="advertisementPriceTag">$99.95</div>
+                <div className="advertisementTaxTag">plus tax</div>
+              </div>
+            </div>
+            <div className="tile-lg">
+              <div className="serviceTileHeader">Junk Removal</div>
+              <div className="advertisement">           
+                <div className="advertisementLabelTag">starting at</div>
+                <div className="advertisementPriceTag">$129.95</div>
+                <div className="advertisementTaxTag">plus tax</div>
+              </div>
+            </div>          
+          </div>
+        </div>
+        <Footer />
+      </React.Fragment>
     )
   }
 }
 
-const condition = authUser => !!authUser
-
-export default withAuthorization(condition)(Home)
+export default Home

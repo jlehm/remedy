@@ -43,6 +43,7 @@ const AccountPage = ( props ) => {
     <div className="fullContent">
       <h2>Account Details</h2>
     </div>
+    
     <div className="accountInformation">
       <div className="card">
         <div className="cardSubTitle">Account Number</div>
@@ -62,6 +63,7 @@ const AccountPage = ( props ) => {
         Edit Details
       </button> 
     </div>
+
     <div className="accountInformation">
         {account.service.map(({contract}) => {
           return (
@@ -89,20 +91,23 @@ const AccountPage = ( props ) => {
         + Add Services
       </button>  
     </div>
+
     <div className="fullContent">
       <h2>Monthly Charges</h2>
       <div className="card">
         <table>
-          <tr>
-            <th>Billing Period</th>
-            <th>Payment Date</th>
-            <th>Payment Amount</th>
-          </tr>
-          <tr>
-            <td>April 20, 2019 to May 20, 2019</td>
-            <td>May 16, 2019</td>
-            <td>$36.85</td>
-          </tr>
+          <tbody>
+            <tr>
+              <th>Billing Period</th>
+              <th>Payment Date</th>
+              <th>Payment Amount</th>
+            </tr>
+            <tr>
+              <td>April 20, 2019 to May 20, 2019</td>
+              <td>May 16, 2019</td>
+              <td>$36.85</td>
+            </tr>
+          </tbody>
         </table>
       </div> 
     </div>
@@ -119,6 +124,7 @@ const AccountPage = ( props ) => {
         Update Method
       </button>  
     </div>
+
     <div className="accountInformation">
       <h2>Add Payment Method</h2>
       <div className="card">
@@ -147,37 +153,41 @@ const AccountPage = ( props ) => {
         </div>
       </div>
     </div>  
+
     <div className="fullContent">
       <h2>Billing Statements</h2>
       <div className="card">
         <table>
-          <tr>
-            <th>Billing Period</th>
-            <th>Date</th>
-            <th>Amount</th>
-            <th>Status</th>
-          </tr>
-          <tr>
-            <td>March 29, 2019 – April 20, 2019</td>
-            <td>April 15, 2019</td>
-            <td>$36.85</td>
-            <td>paid – on time</td>
-          </tr>
-          <tr>
-            <td>February 17, 2019 – March 19, 2019</td>
-            <td>March 14, 2019</td>
-            <td>$36.85</td>
-            <td>paid – on time</td>
-          </tr>
-          <tr>
-            <td>January 16, 2019 – February 17, 2019</td>
-            <td>February 12, 2019</td>
-            <td>$36.85</td>
-            <td>paid – on time</td>
-          </tr>
+          <tbody>
+            <tr>
+              <th>Billing Period</th>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+            <tr>
+              <td>March 29, 2019 – April 20, 2019</td>
+              <td>April 15, 2019</td>
+              <td>$36.85</td>
+              <td>paid – on time</td>
+            </tr>
+            <tr>
+              <td>February 17, 2019 – March 19, 2019</td>
+              <td>March 14, 2019</td>
+              <td>$36.85</td>
+              <td>paid – on time</td>
+            </tr>
+            <tr>
+              <td>January 16, 2019 – February 17, 2019</td>
+              <td>February 12, 2019</td>
+              <td>$36.85</td>
+              <td>paid – on time</td>
+            </tr>
+          </tbody>
         </table>
       </div> 
     </div>
+
     <div className="accountInformation">  
       <h2>Edit Account Details</h2>
       <div className="formWrapper">
@@ -212,6 +222,7 @@ const AccountPage = ( props ) => {
         </form>  
       </div>
     </div> 
+
     <div className="accountInformation">
       <h2>Password Reset</h2>
       <PasswordForgetForm />

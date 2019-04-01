@@ -1,58 +1,64 @@
-const functions = require('firebase-functions')
-const admin = require('firebase-admin')
-admin.initializeApp(functions.config().firebase)
-const express = require('express')
-const cors = require('cors')({origin: true})
-const app = express()
+"use strict";
+var functions = require('firebase-functions');
+var admin = require('firebase-admin');
+var firebaseHelper = require('firebase-functions-helper');
+var express = require('express');
+var bodyParser = require('body-parser');
 
-// TODO: Remember to set token using >> firebase functions:config:set stripe.token="SECRET_STRIPE_TOKEN_HERE"
-const stripe = require('stripe')(functions.config().stripe.token)
+const { validateFirebaseIdToken } = require('./validateFirebaseIdToken.js');
 
-function charge(req, res) {
-    const body = JSON.parse(req.body)
-    const token = body.token.id
-    const amount = body.charge.amount
-    const currency = body.charge.currency
+admin.initializeApp(functions.config().firebase);
+var db = admin.firestore();
+var app = express();
+var main = express();
+var contactsCollection = 'contacts';
 
-    // Charge card
-    stripe.charges.create({
-        amount,
-        currency,
-        description: 'Firebase Example',
-        source: token
-    })
-    .then(charge =>
-        send(res, 200, {
-            message: 'Success',
-            charge,
-        })
-    ).catch((err) => {
-        console.log(err);
-        send(res, 500, {
-            error: err.message
-        })
-    })
-}
+// middleware
+main.use('/api/v1', app);
+main.use(bodyParser.json());
+main.use(bodyParser.urlencoded({
+  extended: false
+})); 
 
-function send(res, code, body) {
-    res.send({
-        statusCode: code,
-        headers: {'Access-Control-Allow-Origin': '*'},
-        body: JSON.stringify(body),
-    })
-}
+// webApi is your functions name, and you will pass main as 
+// a parameter
+exports.webApi = functions.https.onRequest(main); 
 
-app.use(cors);
-app.post('/', (req, res) => {
-    // Catch any unexpected errors to prevent crashing
-    try {
-        charge(req, res)
-    } catch(e) {
-        console.log(e)
-        send(res, 500, {
-            error: `The server received an unexpected error. Please try again and contact the site admin if the error persists.`,
-        })
-    }
-})
+// Add new contact
+// {
+//   "credentials": {
+//     "name": "Jordan",
+//     "number": "12345"
+//   },
+// }
 
-exports.charge = functions.https.onRequest(app);
+app.post('/contacts', function (req, res) {
+  firebaseHelper.firestore.createNewDocument(db, contactsCollection, req.body);
+  res.send('Create a new contact');
+}); 
+
+// Update new contact
+app.patch('/contacts/:contactId', function (req, res) {
+  firebaseHelper.firestore.updateDocument(db, contactsCollection, req.params.contactId, req.body);
+  res.send('Update a new contact');
+}); 
+
+// View a contact
+app.get('/contacts/:contactId', function (req, res) {
+  firebaseHelper.firestore.getDocument(db, contactsCollection, req.params.contactId).then(function (doc) {
+    return res.status(200).send(doc);
+  });
+}); 
+
+// View all contacts
+app.get('/contacts', function (req, res) {
+  firebaseHelper.firestore.backup(db, contactsCollection).then(function (data) {
+    return res.status(200).send(data);
+  });
+}); 
+
+// Delete a contact 
+app.delete('/contacts/:contactId', function (req, res) {
+  firebaseHelper.firestore.deleteDocument(db, contactsCollection, req.params.contactId);
+  res.send('Document deleted');
+});

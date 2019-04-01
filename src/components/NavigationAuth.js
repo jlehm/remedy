@@ -8,11 +8,11 @@ const NavigationAuth = (props) => {
   const routesObj = {
     "routes": [
       {
-        "label": "About",
-        "route": "/about"
+        "label": "Services",
+        "route": "/services"
       },{
-        "label": "Help",
-        "route": "/help"
+        "label": "Coverage",
+        "route": "/coverage"
       },{
         "label": "Account",
         "route": "/account"

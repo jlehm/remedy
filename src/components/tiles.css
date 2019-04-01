@@ -1,0 +1,48 @@
+/**
+ * tiles styling section
+ */
+
+ .tiles {
+   overflow: auto;
+   margin: 0 auto;
+   padding: 1em 0;
+   width: 94vw;
+ }
+ .tilesDesc {
+   padding: 0 0.75vw;
+ }
+ /*
+ .tile {
+   width: 21.875vw;
+   height: 21.875vw;
+   float: left;
+   background: lightgrey;
+   margin: 1.25vw;
+ }
+ */
+ .tile-md {
+   width: 22vw;
+   height: 22vw;
+   float: left;
+   background: lightgrey;
+   margin: 0.75vw;
+ }
+
+ .tile-lg {
+   width: 29.75vw;
+   height: 29.75vw;
+   float: left;
+   background: white;
+   margin: 0.75vw;
+   border: 2px solid black;
+   border-radius: 30px;
+   box-sizing: border-box;
+ }
+
+ .tile-xl {
+   width: 45.5vw;
+   height: 45.5vw;
+   float: left;
+   background: lightgrey;
+   margin: 0.75vw;
+ }

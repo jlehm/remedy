@@ -1,0 +1,80 @@
+.remedyHeaderText {
+    font-size: 64px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+.landingCarousel {
+    height: 500px;
+    background-color: #50E3C2;
+    display: flex;
+    flex-flow: row wrap;
+    /* This aligns items to the end line on main-axis */
+    justify-content: stretch;
+}
+.servicesSection {
+    height: 300px;
+    background: rgba(211, 211, 211, 0.6);
+}
+.serviceTileHeader {
+    font-size: 24px;
+    font-weight: 700;
+    font-style: italic;
+    padding: 15px 0;
+    color: black;
+    text-align: center;
+}
+.advertisement {
+    padding: 100px 50px 0;
+    height: 150px;
+    box-sizing: inherit;
+
+}
+.advertisementLabelTag {
+    font-weight: 500;
+    font-size: 20px;
+    font-style: italic;
+    text-align: right;
+}
+.advertisementPriceTag {
+    font-size: 48px;
+    font-weight: 300;
+    font-style: italic;
+    text-align: right;
+}
+.advertisementTaxTag {
+    font-size: 14px;
+    font-weight: 500;
+    text-align: right;
+}
+
+/* SIGN UP FLOATER */
+.signUpFloater {
+    flex: 1 2 1;
+    flex-grow: 2;
+    background: blueviolet;
+    display: inline-block;
+    height: inherit;
+    padding: 30px;
+    box-sizing: border-box;
+}
+.signUpFloaterGroup {
+
+}
+.signUpFloaterLabel {
+
+}
+.signUpFloaterForm {
+
+}
+.signUpFloaterButton {
+    
+}
+
+/* LANDING */
+.landing {
+    flex: 1 2 1;
+    box-sizing: border-box;
+    height: inherit;
+    background: aqua;
+    display: inline-block;
+}

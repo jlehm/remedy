@@ -16,14 +16,11 @@ class Menu extends Component {
     const routesObj = {
       "routes": [
         {
-          "label": "Add your business",
-          "route": "/addyourbusiness"
-        },{
           "label": "About",
           "route": "/about"
-        },{
-          "label": "Help",
-          "route": "/help"
+        },        {
+          "label": "Services",
+          "route": "/services"
         },{
           "label": "Sign Up",
           "route": "/signup"

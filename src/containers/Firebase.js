@@ -37,15 +37,18 @@ class Firebase {
   onAuthUserListener = (next, fallback) =>
     this.auth.onAuthStateChanged(authUser => {
       if (authUser) {
+        // calls user method defined below with uid
         this.user(authUser.uid)
+          // retrieves authUser.uid value
           .once('value')
           .then(snapshot => {
+            // assigns returned user object as const dbUser
             const dbUser = snapshot.val();
 
-            // default empty roles
-            if (!dbUser.roles) {
-              dbUser.roles = [];
-            }
+          // default empty roles
+//          if (!dbUser.roles) {
+//            dbUser.roles = [];
+//          }
 
             // merge auth and db user
             authUser = {
@@ -62,10 +65,15 @@ class Firebase {
     }
   )
   // *** User API ***
+  // the below methods, made available via Firebase HOC, 
+  // return the referenced data
 
-  user = uid => this.db.ref(`users/${uid}`);
+  user = uid => this.db.ref(`users/${uid}`)
 
-  users = () => this.db.ref('users');
+  users = () => this.db.ref('users')
+
+  // ** Create a similar ref for anything we need to read ** //
+
 }
 
 export default Firebase
