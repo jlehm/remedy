@@ -11,7 +11,10 @@ admin.initializeApp(functions.config().firebase);
 var db = admin.firestore();
 var app = express();
 var main = express();
-var contactsCollection = 'contacts';
+
+var accountsCollection = 'accounts';
+var contractsCollection = 'contracts';
+var ownersCollection = 'owners';
 
 // middleware
 main.use('/api/v1', app);
@@ -24,41 +27,101 @@ main.use(bodyParser.urlencoded({
 // a parameter
 exports.webApi = functions.https.onRequest(main); 
 
-// Add new contact
-// {
-//   "credentials": {
-//     "name": "Jordan",
-//     "number": "12345"
-//   },
-// }
+// Accounts API
+// Create a new account
+app.post('/accounts', function (req, res) {
+  firebaseHelper.firestore.createNewDocument(db, accountsCollection, req.body);
+  res.send('Create a new account');
+});
 
-app.post('/contacts', function (req, res) {
-  firebaseHelper.firestore.createNewDocument(db, contactsCollection, req.body);
-  res.send('Create a new contact');
+// Update new account
+app.patch('/accounts/:accountId', function (req, res) {
+  firebaseHelper.firestore.updateDocument(db, accountsCollection, req.params.accountId, req.body);
+  res.send('Update a new account');
 }); 
 
-// Update new contact
-app.patch('/contacts/:contactId', function (req, res) {
-  firebaseHelper.firestore.updateDocument(db, contactsCollection, req.params.contactId, req.body);
-  res.send('Update a new contact');
-}); 
-
-// View a contact
-app.get('/contacts/:contactId', function (req, res) {
-  firebaseHelper.firestore.getDocument(db, contactsCollection, req.params.contactId).then(function (doc) {
+// View an account
+app.get('/accounts/:accountId', function (req, res) {
+  firebaseHelper.firestore.getDocument(db, accountsCollection, req.params.accountId).then(function (doc) {
     return res.status(200).send(doc);
   });
 }); 
 
-// View all contacts
-app.get('/contacts', function (req, res) {
-  firebaseHelper.firestore.backup(db, contactsCollection).then(function (data) {
+// View all accounts
+app.get('/accounts', function (req, res) {
+  firebaseHelper.firestore.backup(db, accountsCollection).then(function (data) {
     return res.status(200).send(data);
   });
 }); 
 
-// Delete a contact 
-app.delete('/contacts/:contactId', function (req, res) {
-  firebaseHelper.firestore.deleteDocument(db, contactsCollection, req.params.contactId);
+// Delete an account 
+app.delete('/accounts/:accountId', function (req, res) {
+  firebaseHelper.firestore.deleteDocument(db, accountsCollection, req.params.accountId);
+  res.send('Document deleted');
+});
+
+// Contracts API
+// Add new contract
+app.post('/contracts', function (req, res) {
+  firebaseHelper.firestore.createNewDocument(db, contractsCollection, req.body);
+  res.send('Create a new contract');
+}); 
+
+// Update new contract
+app.patch('/contracts/:contractId', function (req, res) {
+  firebaseHelper.firestore.updateDocument(db, contractsCollection, req.params.contractId, req.body);
+  res.send('Update a new contract');
+}); 
+
+// View a contract
+app.get('/contracts/:contractId', function (req, res) {
+  firebaseHelper.firestore.getDocument(db, contractsCollection, req.params.contractId).then(function (doc) {
+    return res.status(200).send(doc);
+  });
+}); 
+
+// View all contracts
+app.get('/contracts', function (req, res) {
+  firebaseHelper.firestore.backup(db, contractsCollection).then(function (data) {
+    return res.status(200).send(data);
+  });
+}); 
+
+// Delete a contract 
+app.delete('/contracts/:contractId', function (req, res) {
+  firebaseHelper.firestore.deleteDocument(db, contractsCollection, req.params.contractId);
+  res.send('Document deleted');
+});
+
+// Owners API
+// Add new owner
+app.post('/owners', function (req, res) {
+  firebaseHelper.firestore.createNewDocument(db, ownersCollection, req.body);
+  res.send('Create a new owner');
+}); 
+
+// Update new owner
+app.patch('/owners/:ownerId', function (req, res) {
+  firebaseHelper.firestore.updateDocument(db, ownersCollection, req.params.ownerId, req.body);
+  res.send('Update a new owner');
+}); 
+
+// View an owner
+app.get('/owners/:ownerId', function (req, res) {
+  firebaseHelper.firestore.getDocument(db, ownersCollection, req.params.ownerId).then(function (doc) {
+    return res.status(200).send(doc);
+  });
+}); 
+
+// View all owners
+app.get('/owners', function (req, res) {
+  firebaseHelper.firestore.backup(db, ownersCollection).then(function (data) {
+    return res.status(200).send(data);
+  });
+}); 
+
+// Delete an owner 
+app.delete('/owners/:ownerId', function (req, res) {
+  firebaseHelper.firestore.deleteDocument(db, ownersCollection, req.params.ownerId);
   res.send('Document deleted');
 });
