@@ -187,7 +187,6 @@ const AccountPage = ( props ) => {
         </table>
       </div> 
     </div>
-
     <div className="accountInformation">  
       <h2>Edit Account Details</h2>
       <div className="formWrapper">
@@ -228,6 +227,7 @@ const AccountPage = ( props ) => {
       <PasswordForgetForm />
       <PasswordChangeForm />
     </div>
+
   </React.Fragment>
   )
 }
