@@ -14,6 +14,7 @@ import Profile from './pages/Profile.js'
 import Account from './pages/Account.js'
 import Admin from './pages/Admin.js'
 import Start from './pages/Start.js'
+import Onboarding from './components/Onboarding.js'
 
 
 class App extends React.Component {
@@ -70,6 +71,10 @@ class App extends React.Component {
               <Route
                 path="/start"
                 render={(props)=><Start />}
+              />
+              <Route
+                path="/onboarding"
+                render={(props)=><Onboarding />}
               />
               <Route
                 path="/profile"

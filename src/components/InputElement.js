@@ -2,7 +2,7 @@ import React from 'react'
 import './InputElement.css'
 
 const InputElement = ({label, type, name, value, onChange, placeholder}) => (
-    <div className="fullContent">
+    <div className="inputElement">
       <div className="inputLabel">{label}</div>
       <input 
           className="inputField"

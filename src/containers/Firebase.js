@@ -1,6 +1,7 @@
 import app from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/database'
+import 'firebase/firestore'
 
 
 const config = {
@@ -16,7 +17,8 @@ class Firebase {
   constructor() {
     app.initializeApp(config)
     this.auth = app.auth()
-    this.db = app.database();
+    this.db = app.database()
+    this.firestore = app.firestore()
   }
   // *** Auth API ***
   doCreateUserWithEmailAndPassword = (email, password) =>
@@ -32,8 +34,9 @@ class Firebase {
   doPasswordUpdate = password =>
     this.auth.currentUser.updatePassword(password)
 
-  // *** Merge Auth and DB User API *** //
 
+    
+  // *** Merge Auth and DB User API *** //
   onAuthUserListener = (next, fallback) =>
     this.auth.onAuthStateChanged(authUser => {
       if (authUser) {
@@ -71,6 +74,10 @@ class Firebase {
   user = uid => this.db.ref(`users/${uid}`)
 
   users = () => this.db.ref('users')
+
+  // *** Owners API ***
+  //
+  owners = () => this.firestore.collection('owners')
 
   // ** Create a similar ref for anything we need to read ** //
 
