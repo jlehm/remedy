@@ -1,5 +1,5 @@
 .buttonElement {
-  width: 250px;
+  width: inherit;
   height: 50px;
   background: rgb(200, 10, 175);
   font-size: 16px;
@@ -7,7 +7,7 @@
   font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
   color: white;
   display: block;
-  margin: 15px auto;
+  margin: 20px auto;
 }
 .buttonElement:hover {
   cursor: pointer;

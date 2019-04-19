@@ -4,7 +4,7 @@ import SignUpForms_Billing from './../components/SignUpForms_Billing.js'
 import SignUpForms_Payment from './../components/SignUpForms_Payment.js'
 import SignUpForms_Service from './../components/SignUpForms_Service.js'
 
-import ButtonElement from './../components/ButtonElement.js'
+import './../components/SignUpForms.css'
 
 import { withFirebase } from './../containers/FirebaseContext.js'
 
@@ -37,10 +37,10 @@ const INITIAL_STATE = {
   payment_zipcode: ''
 }
 
-const SignUpForms = ({ index, state, onChange }) => {
+const SignUpForms = ({ index, state, onChange, onSubmit }) => {
   switch(index) {
     case 0:
-      return <SignUpForms_Owner state={state} onChange={onChange} />
+  return <SignUpForms_Owner state={state} onChange={onChange} />
     case 1:
       return <SignUpForms_Service state={state} onChange={onChange} />
     case 2:
@@ -73,6 +73,7 @@ class Onboarding extends React.Component {
     //console.log({ firstName, middleName, lastName, phoneNumber })
     event.preventDefault()
   }
+  
   addUser = e => {
     e.preventDefault();
 
@@ -114,8 +115,7 @@ class Onboarding extends React.Component {
   render() {
     return(
       <React.Fragment>
-        <SignUpForms index={this.state._signUpForms_index} state={this.state} onChange={this.onChange} />
-        <ButtonElement label="submit" onSubmit={this.addUser} />
+        <SignUpForms index={this.state._signUpForms_index} state={this.state} onChange={this.onChange} onSubmit={this.addUser}/>
       </React.Fragment>
     )
   }
