@@ -3,14 +3,13 @@ import SignUpForms_Owner from './../components/SignUpForms_Owner.js'
 import SignUpForms_Billing from './../components/SignUpForms_Billing.js'
 import SignUpForms_Payment from './../components/SignUpForms_Payment.js'
 import SignUpForms_Service from './../components/SignUpForms_Service.js'
-import ButtonElement from './../components/ButtonElement.js'
 
 import './../components/SignUpForms.css'
 
 import { withFirebase } from './../containers/FirebaseContext.js'
 
 const INITIAL_STATE = {
-  _currentStep: 0,
+  _signUpForms_index: 0,
   _isComplete: null,
   _error: null,
   owner_firstName: '',   
@@ -38,19 +37,68 @@ const INITIAL_STATE = {
   payment_zipcode: ''
 }
 
-const StepButton = ({ label, onClick }) => 
-  <button className="buttonElement" onClick={ onClick }>{ label }</button>
+/*
+const SignUpForms2 = ({ index, state, onChange, onSubmit, increment, decrement }) => {
+  switch(index) {
+    case 0:
+  return <SignUpForms_Owner state={state} onChange={onChange} decrement={decrement} increment={increment} />
+    case 1:
+      return <SignUpForms_Service state={state} onChange={onChange} decrement={decrement}  increment={increment} />
+    case 2:
+      return <SignUpForms_Billing state={state} onChange={onChange} decrement={decrement} increment={increment} />
+    case 3:
+      return <SignUpForms_Payment state={state} onChange={onChange} decrement={decrement} increment={increment} />
+    default:
+      return null;
+  }
+}
+*/
 
+const SignUpForms = ({index}) => 
+  SignUpFormsArray[{index}]
+
+
+const SignUpForms_Owner_ = ({ state, onChange, decrement, increment }) => 
+  <SignUpForms_Owner state={state} onChange={onChange} decrement={decrement} increment={increment} />
+
+const SignUpForms_Service_ = ({ state, onChange, decrement, increment }) => 
+  <SignUpForms_Service state={state} onChange={onChange} decrement={decrement}  increment={increment} />
+
+const SignUpForms_Billing_ = ({ state, onChange, decrement, increment }) => 
+  <SignUpForms_Billing state={state} onChange={onChange} decrement={decrement} increment={increment} />
+
+const SignUpForms_Payment_ = ({ state, onChange, decrement, increment }) => 
+  <SignUpForms_Payment state={state} onChange={onChange} decrement={decrement} increment={increment} />
+
+
+
+const SignUpFormsArray = [
+  SignUpForms_Owner_,
+  SignUpForms_Service_,
+  SignUpForms_Payment_,
+  SignUpForms_Billing_
+]
+
+/*
+const FormCarousel = ( {array, currentIndex} ) => {
+  <React.Fragment> 
+    <SignUpForms currentIndex={currentIndex} array={array}  />
+  </React.Fragment>
+}
+*/
 
 class Onboarding extends React.Component {
   constructor(props) {
     super(props)
     this.state = INITIAL_STATE
-    this._prev = this._prev.bind(this)
-    this._next = this._next.bind(this)
   }
   onChange = event => 
     this.setState({ [event.target.name]: event.target.value })
+  
+
+  increment_signUpForms_index = () => 
+    this.setState({ _signUpForms_index: this.state._signUpForms_index++ })
+  
   
   onSubmit = event => {
     //const { firstName, middleName, lastName, phoneNumber } = this.state
@@ -61,44 +109,16 @@ class Onboarding extends React.Component {
     event.preventDefault()
   }
 
-  _prev = (e) => {
-    e.preventDefault()
-    {(this.state._currentStep !== 0)?
-    (this.setState({ _currentStep: this.state._currentStep-1 })):
-    (this.setState({ _currentStep: 3 }))}
+  decrementIndex = (event) => {
+    event.preventDefault()
+    this.setState({ _signUpForms_index: this.state._signUpForms_index-- })
   }
 
-  _next = (e) => {
-    e.preventDefault()
-    {(this.state._currentStep !== 3)?
-    (this.setState({ _currentStep: this.state._currentStep+1 })):
-    (this.setState({ _currentStep: 0 }))}
-  }
-
-  get PrevButton() {
-    let currentStep = this.state._currentStep
-    if (currentStep!==0) {
-      return <StepButton label="prev" onClick={this._prev}  />
-    }
-    return null
-  }
-
-  get NextButton() {
-    let currentStep = this.state._currentStep
-    if (currentStep!==3) {
-      return <StepButton label="next" onClick={this._next}  />
-    }
-    return null
+  incrementIndex = (event) => {
+    event.preventDefault()
+    this.setState({ _signUpForms_index: this.state._signUpForms_index++ })
   }
   
-  get SubmitButton() {
-    let _isComplete = this.state._isComplete
-    if (_isComplete) {
-      return <ButtonElement label="submit" onSubmit={this.addUser} />
-    }
-    return null
-  }
-
   addUser = e => {
     e.preventDefault();
 
@@ -140,10 +160,7 @@ class Onboarding extends React.Component {
   render() {
     return(
       <React.Fragment>
-        <SignUpForms_Owner state={this.state} onChange={this.onChange} index={this.state._currentStep} PrevButton={this.PrevButton} NextButton={this.NextButton}  />
-        <SignUpForms_Service state={this.state} onChange={this.onChange} index={this.state._currentStep} PrevButton={this.PrevButton} NextButton={this.NextButton}  />
-        <SignUpForms_Billing state={this.state} onChange={this.onChange} index={this.state._currentStep} PrevButton={this.PrevButton} NextButton={this.NextButton}  />
-        <SignUpForms_Payment state={this.state} onChange={this.onChange} index={this.state._currentStep} PrevButton={this.PrevButton} NextButton={this.NextButton} SubmitButton={this.SubmitButton}  />  
+        <SignUpForms index={this.state._signUpForms_index} state={this.state} onChange={this.onChange} onSubmit={this.addUser} increment={this.incrementIndex} decrement={this.decrementIndex} />
       </React.Fragment>
     )
   }

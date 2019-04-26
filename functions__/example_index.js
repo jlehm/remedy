@@ -6,5 +6,5 @@ admin.initializeApp(functions.config().firebase);
 var db = admin.firestore();
 
 exports.setData = (documentName, documentObject) => {
-  db.collection('users').doc(documentName).set(documentObject)
+  db.collection('users').doc("test document").set({ "testdata": "testdata" })
 }

@@ -77,7 +77,7 @@ class Firebase {
 
   // *** Owners API ***
   //
-  owners = () => this.firestore.collection('owners')
+  owners = () => this.firestore.collection("owners").add
 
   // ** Create a similar ref for anything we need to read ** //
 

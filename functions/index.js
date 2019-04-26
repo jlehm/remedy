@@ -25,7 +25,7 @@ main.use(bodyParser.urlencoded({
 
 // webApi is your functions name, and you will pass main as 
 // a parameter
-exports.webApi = functions.https.onRequest(main); 
+exports.webApi = functions.https.onRequest(main);
 
 // Accounts API
 // Create a new account
